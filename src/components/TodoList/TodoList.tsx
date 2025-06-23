@@ -5,10 +5,8 @@ interface TodoListProps {
   todos: Todo[];
 }
 
-const TodoList: FC<TodoListProps> = ({ }) => {
-  return (
-       
-  )
+const TodoList: FC<TodoListProps> = ({ todos }) => {
+  return todos.map(todo => <TodoListItem todo={todo} />)
 }
 
 export default TodoList;
