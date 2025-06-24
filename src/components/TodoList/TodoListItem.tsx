@@ -17,7 +17,7 @@ const TodoListItem = ({ todo }) => {
       data-signal-newcontent=""
     >
       <div class="flex flex-row items-start justify-start space-x-2">
-        <input type="checkbox" data-bind-checkboxes.checkbox1 />
+        <input type="checkbox" />
         <div>
           <span data-show="$editing = 'true'">
             <div class="flex flex-row items-start-justify-start space-x-2">
@@ -37,11 +37,11 @@ const TodoListItem = ({ todo }) => {
               <p data-class-loading="$fetching" class="text-black text-sm font-bold animate-pulse">LOADING...</p>
             </div>
           </span>
-          <span data=show="$editing = 'false'">
+          <span data-show="$editing = 'false'">
             <h1 class="text-2xl font-bold text-black">
               {content}
             </h1>
-          <span>
+          </span>
         </div>
       </div>
     </div>

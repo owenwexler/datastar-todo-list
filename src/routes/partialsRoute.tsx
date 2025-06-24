@@ -11,7 +11,7 @@ partialsRoute.get('/load', async (c) => {
   console.log('GET /load');
 
   try {
-    const todos = getAllTodos();
+    const todos = await getAllTodos();
 
     return c.html(
       <>
