@@ -1,9 +1,10 @@
 # Stack
-Runtime: Bun
-Backend framework: Hono
-Frontend library: Datastar
-Database: SQLite
-Database Client: Bun SQLite client
+- Runtime: Bun
+- Backend framework: Hono
+- Templating engine: Hono JSX
+- Frontend library: Datastar
+- Database: SQLite
+- Database Client: Bun SQLite client
 
 # Installation & Setup
 - Make sure you have Bun installed, preferably Bun 1.2 or later
@@ -28,11 +29,11 @@ Bun is the runtime.  Hono is the backend framework.  Hono JSX is the templating 
 
 This starter template includes the following:
 
-- The latest versions of HTMX and Alpine (replaced with Datastar in this repo), self-hosted, in the /static/lib directory.  Self-hosting is preferred over the use of CDNs for production applications.
+- The latest versions of HTMX and Alpine *(replaced with Datastar in this repo)*, self-hosted, in the /static/lib directory.  Self-hosting is preferred over the use of CDNs for production applications.
 - Scaffolds for a home route, partials routes, and API routes in Hono
-- Generic Hono JSX components for Head and Body - the Head component includes all script tags for HTMX and Alpine.
+- Generic Hono JSX components for Head and Body - the Head component includes script tags for Datastar.
 - Sample HTMX and Alpine mini-apps: a counter demonstrating the use of Alpine, and a form whereyou enter your name and click the button and the Hello message is changed to Hello, [name]! demonstrating the use of HTMX with Hono partials.
-- Components for the above mini-apps in Hono JSX format NOTE: the mini-apps were removed from this repo
+- Components for the above mini-apps in Hono JSX format *NOTE: the mini-apps were removed from this repo*
 - A Typescript config
 - A Nodemon config for hot reload.  If you do not have Nodemon installed globally, install Nodemon in the project before running.
 - A basic Tailwind config for Tailwind use.

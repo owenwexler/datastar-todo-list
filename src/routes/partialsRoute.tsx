@@ -12,6 +12,8 @@ partialsRoute.get('/load', async (c) => {
 
   try {
     const todos = await getAllTodos();
+    
+    console.log('TODOS FETCHED SUCCESSFULLY: ', todos);
 
     return c.html(
       <>

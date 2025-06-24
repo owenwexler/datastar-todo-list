@@ -8,6 +8,7 @@ interface TodoListItemProps {
 }
 
 const TodoListItem = ({ todo }) => {
+  console.log('TodoListItem loaded for: ', todo);
   const { id, content, userId } = todo;
 
   return (

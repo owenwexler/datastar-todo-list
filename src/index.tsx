@@ -23,12 +23,9 @@ app.get('/', async (c) => {
             id="main-container"
             class="container flex flex-col items-center justify-center px-4 py-10 space-y-8"
             data-on-load="@get('/partials/load');"
-            data-indicator-fetching
           >
-            <div data-show="$fetching">
-              <div class="flex flex-col items-center justify-center text-center p-4">
-                <h1 class="text-3xl text-black font-bold animate-pulse">LOADING...</h1>
-              </div>
+            <div class="flex flex-col items-center justify-center text-center p-4">
+              <h1 class="text-3xl text-black font-bold animate-pulse">LOADING...</h1>
             </div>
           </div>
         </main>

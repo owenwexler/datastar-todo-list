@@ -9,7 +9,17 @@ interface TodoListProps {
 }
 
 const TodoList: FC<TodoListProps> = ({ todos }) => {
-  return todos.map(todo => <TodoListItem todo={todo} />)
+  console.log('TODO LIST LOADED SUCCESSFULLY: ', todos);
+  return (
+    <div class="flex flex-col items-center justify-center space-y-3">
+      <h1 class="text-black text-3xl font-bold">
+        TODO LIST
+      </h1>
+      {
+        todos.map(todo => <TodoListItem todo={todo} />)
+      }
+    </div>
+  )
 }
 
 export default TodoList;
