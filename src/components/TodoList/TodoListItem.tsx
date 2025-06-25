@@ -8,45 +8,51 @@ interface TodoListItemProps {
 }
 
 const TodoListItem = ({ todo }) => {
-  console.log('TodoListItem loaded for: ', todo);
-  const { id, content, userId } = todo;
+  const { id, content } = todo;
 
   return (
     <div
       class="flex flex-row items-center justify-around"
-      data-signal-editing="false"
-      data-signal-newcontent=""
+      data-signals-editing="false"
     >
-      <div class="flex flex-row items-start justify-start space-x-2">
-        <input type="checkbox" />
-        <div>
-          <span data-show="$editing = 'true'">
-            <div class="flex flex-row items-start-justify-start space-x-2">
+      <div class="flex flex-row items-center justify-around space-x-2">
+          <input type="checkbox" />
+          <div data-show="$editing">
+            <div class="flex flex-row items-start justify-start space-x-2">
               <input
+                id="todo-list-new-content"
                 type="text"
                 className={inputClasses}
-                data-bind-newcontent
+                data-bind="newcontent"
               />
 
               <button
                 className={buttonClasses}
-                data-on-click="@get('/partials/edit-todo')"
+                data-on-click="console.log('editing: ', $editing); console.log('newcontent: ', $newcontent)"
                 data-indicator-fetching
               >
                 SUBMIT
               </button>
               <p data-class-loading="$fetching" class="text-black text-sm font-bold animate-pulse">LOADING...</p>
             </div>
-          </span>
-          <span data-show="$editing = 'false'">
-            <h1 class="text-2xl font-bold text-black">
-              {content}
-            </h1>
-          </span>
+          </div>
+          <div data-show="!$editing">
+            <div class="flex flex-row items-center justify-start space-x-6">
+              <h1 class="text-2xl font-bold text-black">
+                {content}
+              </h1>
+
+              <button
+                className={buttonClasses}
+                data-on-click="console.log('clicked'); editing = !editing"
+              >
+                EDIT
+              </button>
+            </div>
+          </div>
         </div>
-      </div>
     </div>
   )
 }
 
-export default TodoListItem;
+export default TodoListItem

@@ -5,6 +5,7 @@ import Head from './components/Head/Head';
 import Body from './components/Body/Body';
 import apiRoute from './routes/apiRoute';
 import { serve } from 'bun';
+import Loading from './components/Loading/Loading';
 
 const app = new Hono();
 
@@ -21,11 +22,15 @@ app.get('/', async (c) => {
         <main class="flex flex-col items-center justify-center bg-white text-black">
           <div
             id="main-container"
-            class="container flex flex-col items-center justify-center px-4 py-10 space-y-8"
-            data-on-load="@get('/partials/load');"
+            class="container flex flex-col items-center justify-center px-4 py-10 space-y-4"
+            data-on-load="@get('/partials/todos')"
           >
-            <div class="flex flex-col items-center justify-center text-center p-4">
-              <h1 class="text-3xl text-black font-bold animate-pulse">LOADING...</h1>
+            <h1 class="text-3xl font-bold text-black">THE BEST TODO LIST EVER</h1>
+            <div
+              id="todo-container"
+              class="flex flex-col items-center justify-center space-x-2"
+            >
+              <Loading />
             </div>
           </div>
         </main>
